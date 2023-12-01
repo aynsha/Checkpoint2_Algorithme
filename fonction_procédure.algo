@@ -1,0 +1,19 @@
+ALGORITHM produits_de_points
+// Une fonction, appelée dot_product qui calcule dans la variable ps, le produit dot(scalaire) de v1 et v2 
+  FUNCTION dot_product(v1, v2) : INTEGER
+  VAR
+  i, N: INTEGER
+    ps:INTEGER
+  BEGIN
+    ps:= O;
+    FOR i FROM 1 TO N STEP 1  DO
+      ps:= ps + v1[i]*v2[i]
+      IF (ps <> 0) THEN
+      read(ps)
+      END_IF
+      IF (ps===0) THEN
+        Write("Le produit des deux vecteurs orthogonaux est nul")
+      END_IF
+    END_FOR
+  END 
+  
