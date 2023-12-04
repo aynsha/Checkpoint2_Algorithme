@@ -4,7 +4,7 @@ VAR
     i,j,k: INTEGER //sachant que k est notre clé
 BEGIN
    i:= 0
-   FOR i FROM 0 TO j-1  DO
+   FOR i FROM 0 TO arr.length-1  DO
     k := arr[i]
     j := i-1
     WHILE (arr[j] > k) AND (j >= 0) DO
@@ -13,4 +13,4 @@ BEGIN
     ENDWHILE
     arr[j + 1] := k
    END_FOR
-ENDgi
+END

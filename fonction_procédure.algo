@@ -1,19 +1,33 @@
-ALGORITHM produits_de_points
 // Une fonction, appelée dot_product qui calcule dans la variable ps, le produit dot(scalaire) de v1 et v2 
+ALGORITHM produit_scalaire
+VAR
+  N : INTEGER ;
+  set1 , set2 :  ARRAY_OF INTEGER[N];
+BEGIN
+//Fonction dot product
   FUNCTION dot_product(v1, v2) : INTEGER
-  VAR
-  i, N: INTEGER
-    ps:INTEGER
-  BEGIN
-    ps:= O;
-    FOR i FROM 1 TO N STEP 1  DO
-      ps:= ps + v1[i]*v2[i]
-      IF (ps <> 0) THEN
-      read(ps)
-      END_IF
-      IF (ps===0) THEN
-        Write("Le produit des deux vecteurs orthogonaux est nul")
-      END_IF
+    VAR
+    i,ps: INTEGER
+    BEGIN
+      ps:= O;
+      FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:= ps + v1[i]*v2[i]
+      END_FOR
+  END
+  //**********************
+    Write("Donnez la dimension des vecteurs")
+    Read (N);
+    FOR i FROM 0 TO N STEP 1  DO
+      Write ("Veuillez saisir l'élément du vecteur set1 à la position" ,i);
+      Read(set1[i])
+      Write ("Veuillez saisir l'élément du vecteur set2 à la position" ,i);
+      Read(set2[i])
     END_FOR
-  END 
+    IF ( dot_product(set1,set2)=== 0 ) THEN
+      Write("Les deux vecteurs sont  orthogonaux ")
+      ELSE
+      Write("Les deux vecteur ne sont pas orthogonaux ");
+    END_IF
+    
+END 
   
